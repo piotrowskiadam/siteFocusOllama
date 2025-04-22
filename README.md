@@ -66,3 +66,12 @@ MIT License
 ## 👥 Autorzy
 
 - [Roman Rozenberger](https://rozenberger.com)
+## Running with Docker
+
+To build and run the application using Docker, ensure you have Docker and Docker Compose installed. Then, run the following command in the project's root directory:
+
+```bash
+docker-compose up --build
+```
+
+This will build the Docker image (if it doesn't exist) and start the container. The application will be accessible at `http://localhost:8501`.
