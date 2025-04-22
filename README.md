@@ -46,6 +46,16 @@ streamlit run app.py
 4. Wprowadź listę domen do analizy
 5. Kliknij START
 
+## 🐳 Uruchamianie z Dockerem
+
+Aby zbudować i uruchomić aplikację za pomocą Dockera, upewnij się, że masz zainstalowanego Dockera oraz Docker Compose. Następnie uruchom następujące polecenie w głównym katalogu projektu:
+
+```bash
+docker-compose up --build
+```
+
+Spowoduje to zbudowanie obrazu Docker (jeśli nie istnieje) i uruchomienie kontenera. Aplikacja będzie dostępna pod adresem `http://localhost:8501`.
+
 ## 📊 Metryki
 
 - **Site Focus Score** - Miara spójności tematycznej (0-100%)
@@ -66,12 +76,3 @@ MIT License
 ## 👥 Autorzy
 
 - [Roman Rozenberger](https://rozenberger.com)
-## Running with Docker
-
-To build and run the application using Docker, ensure you have Docker and Docker Compose installed. Then, run the following command in the project's root directory:
-
-```bash
-docker-compose up --build
-```
-
-This will build the Docker image (if it doesn't exist) and start the container. The application will be accessible at `http://localhost:8501`.
