@@ -46,9 +46,10 @@ jobs:
         with:
           name: linux-packages
           path: |
-            sitefocus_*.deb
-            sitefocus-*.rpm
-            dist/**
+            dist/sitefocus_*.deb
+            dist/sitefocus-*.rpm
+            dist/sitefocus.desktop
+            dist/sitefocus.appdata.xml
           if-no-files-found: ignore
 
   build-windows:
@@ -84,7 +85,7 @@ jobs:
         with:
           name: windows-package
           path: |
-            sitefocus-*-windows.zip
+            dist/sitefocus-*-windows.zip
           if-no-files-found: ignore
 
   build-macos:
@@ -120,5 +121,5 @@ jobs:
         with:
           name: macos-package
           path: |
-            sitefocus-*-macos.zip
+            dist/sitefocus-*-macos.zip
           if-no-files-found: ignore
