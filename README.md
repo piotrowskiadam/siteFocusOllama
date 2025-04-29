@@ -26,6 +26,9 @@ git clone https://github.com/username/sitefocus.git
 cd sitefocus
 ```
 
+:start_line:28
+-------
+
 2. Zainstaluj wymagane pakiety:
 ```bash
 pip install -r requirements.txt
@@ -34,8 +37,21 @@ pip install -r requirements.txt
 3. (Opcjonalnie) Zainstaluj i uruchom Ollamę:
 - [Instrukcje instalacji Ollamy](https://ollama.ai/download)
 
-## 🎮 Użycie
+## 📦 Tworzenie Instalatorów
 
+Aby stworzyć instalatory dla różnych platform, uruchom skrypt budowlany:
+```bash
+./build.sh
+```
+
+Skrypt automatycznie wykryje system operacyjny i stworzy odpowiednie pakiety:
+- **Windows**: .exe (portable)
+- **Linux**: .deb i .rpm
+- **macOS**: .dmg
+
+Upewnij się, że masz zainstalowane wymagane narzędzia (np. `fpm` dla Linuxa).
+
+## 🎮 Użycie
 1. Uruchom aplikację:
 ```bash
 streamlit run app.py
