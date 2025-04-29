@@ -24,3 +24,10 @@ htmltomarkdown.py
 app copy 3.py
 app copy 2.py
 .DS_Store
+
+# Build artifacts
+dist/
+*.deb
+*.rpm
+*.zip
+*.dmg
