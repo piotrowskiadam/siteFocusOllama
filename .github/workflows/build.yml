@@ -34,6 +34,13 @@ jobs:
           chmod +x build.sh
           bash build.sh
 
+      - name: Debug Linux build artifacts
+        run: |
+          echo "Workspace root:"
+          ls -R .
+          echo "dist directory:"
+          ls -R dist
+
       - name: Upload Linux artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -41,9 +48,8 @@ jobs:
           path: |
             sitefocus_*.deb
             sitefocus-*.rpm
-            dist/app
-            dist/sitefocus.desktop
-            dist/sitefocus.appdata.xml
+            dist/**
+          if-no-files-found: ignore
 
   build-windows:
     name: Windows Package
@@ -66,12 +72,20 @@ jobs:
           chmod +x build.sh
           bash build.sh
 
+      - name: Debug Windows build artifacts
+        run: |
+          echo "Workspace root:"
+          ls -R .
+          echo "dist directory:"
+          ls -R dist
+
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v3
         with:
           name: windows-package
           path: |
             sitefocus-*-windows.zip
+          if-no-files-found: ignore
 
   build-macos:
     name: macOS Package
@@ -94,8 +108,17 @@ jobs:
           chmod +x build.sh
           ./build.sh
 
+      - name: Debug macOS build artifacts
+        run: |
+          echo "Workspace root:"
+          ls -R .
+          echo "dist directory:"
+          ls -R dist
+
       - name: Upload macOS artifact
         uses: actions/upload-artifact@v3
         with:
           name: macos-package
-          path: sitefocus-*-macos.zip
+          path: |
+            sitefocus-*-macos.zip
+          if-no-files-found: ignore
