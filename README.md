@@ -45,8 +45,13 @@ Aby stworzyć instalatory dla różnych platform, uruchom skrypt budowlany:
 ```
 
 Skrypt automatycznie wykryje system operacyjny i stworzy odpowiednie pakiety:
+- **Windows**: portable .exe zipped as `sitefocus-1.0.0-windows.zip` (generated in project root)
 - **Windows**: .exe (portable)
 - **Linux**: .deb i .rpm
+Uwaga:
+  - Windows: uruchom `./build.sh` na Windows, aby wygenerować `dist/app.exe`.
+  - Linux: pliki `.deb` i `.rpm` pojawią się w katalogu głównym projektu.
+  - macOS: uruchom `./build.sh` na macOS, aby wygenerować `SiteFocus.dmg`.
 - **macOS**: .dmg
 
 Upewnij się, że masz zainstalowane wymagane narzędzia (np. `fpm` dla Linuxa).
