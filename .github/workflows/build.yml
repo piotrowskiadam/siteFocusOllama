@@ -42,7 +42,7 @@ jobs:
           ls -R dist
 
       - name: Upload Linux artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: linux-packages
           path: |
@@ -81,7 +81,7 @@ jobs:
           ls -R dist
 
       - name: Upload Windows artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: windows-package
           path: |
@@ -117,7 +117,7 @@ jobs:
           ls -R dist
 
       - name: Upload macOS artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: macos-package
           path: |
