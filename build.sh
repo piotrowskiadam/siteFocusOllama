@@ -12,6 +12,12 @@ OS=$(uname -s)
 # Build the application using the spec file
 pyinstaller pyinstaller.spec
 
+# Determine the output binary name early for Windows packaging
+BIN_NAME="app"
+if [[ "$OS" == "MINGW"* || "$OS" == "CYGWIN"* || "$OS" == "MSYS"* || "$OS" == "Windows_NT" ]]; then
+    BIN_NAME="app.exe"
+fi
+
 # Windows: Zip the portable executable
 if [[ "$OS" == "MINGW"* || "$OS" == "CYGWIN"* || "$OS" == "MSYS"* || "$OS" == "Windows_NT" ]]; then
     echo "Packaging Windows executable..."

@@ -32,7 +32,7 @@ jobs:
       - name: Build & Package
         run: |
           chmod +x build.sh
-          ./build.sh
+          bash build.sh
 
       - name: Upload Linux artifacts
         uses: actions/upload-artifact@v3
@@ -63,13 +63,15 @@ jobs:
 
       - name: Build & Package
         run: |
-          build.sh
+          chmod +x build.sh
+          bash build.sh
 
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v3
         with:
           name: windows-package
-          path: sitefocus-*-windows.zip
+          path: |
+            sitefocus-*-windows.zip
 
   build-macos:
     name: macOS Package
